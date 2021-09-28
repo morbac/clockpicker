@@ -371,8 +371,8 @@
 		autoclose: false,    // auto close when minute is selected
 		twelvehour: false, // change to 12 hour AM/PM clock from 24 hour
 		vibrate: true,       // vibrate the device when dragging clock hand,
-    showonfocus: true,   // shows the picker when input get focus
-    showonclick: true    // shows the picker when input is clicked
+		showonfocus: true,   // shows the picker when input get focus
+		showonclick: true    // shows the picker when input is clicked
 	};
 
 	// Show or hide popover
@@ -510,6 +510,14 @@
 		this.popover.hide();
 
 		raiseCallback(this.options.afterHide);
+	};
+
+	ClockPicker.prototype.toggle = function(){
+		if (this.isShown) {
+			this.hide();
+		} else {
+			this.show();
+		}
 	};
 
 	// Toggle to hours or minutes view

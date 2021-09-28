@@ -95,6 +95,7 @@ if (something) {
 | --------- | --------- | ----------- |
 | show |   | show the clockpicker |
 | hide |   | hide the clockpicker |
+| toggle |   | show/hide the clockpicker depending on current status |
 | remove |   | remove the clockpicker (and event listeners) |
 | toggleView | 'hours' or 'minutes' | toggle to hours or minutes view |
 
