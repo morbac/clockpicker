@@ -177,8 +177,8 @@
 		this.spanMinutes.click($.proxy(this.toggleView, this, 'minutes'));
 
 		// Show or toggle
-		input.on('focus.clockpicker click.clockpicker', $.proxy(this.show, this));
-		addon.on('click.clockpicker', $.proxy(this.toggle, this));
+    if (options.showonfocus) input.on('focus.clockpicker click.clockpicker', $.proxy(this.show, this));
+		if (options.showonclick) addon.on('click.clockpicker', $.proxy(this.toggle, this));
 
 		// Build ticks
 		var tickTpl = $('<div class="clockpicker-tick"></div>'),
@@ -370,7 +370,9 @@
 		donetext: '完成',    // done button text
 		autoclose: false,    // auto close when minute is selected
 		twelvehour: false, // change to 12 hour AM/PM clock from 24 hour
-		vibrate: true        // vibrate the device when dragging clock hand
+		vibrate: true,       // vibrate the device when dragging clock hand,
+    showonfocus: true,   // shows the picker when input get focus
+    showonclick: true    // shows the picker when input is clicked
 	};
 
 	// Show or hide popover
